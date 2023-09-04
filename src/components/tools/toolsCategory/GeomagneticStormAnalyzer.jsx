@@ -1,134 +1,128 @@
-import React from "react";
+import React, { useState } from "react";
 import { BarChart, Legend, XAxis, YAxis, Bar, Tooltip } from "recharts";
+import Loader from "../../shared/Loader";
 
 const GeomagneticStormAnalyzer = () => {
-  const data = [
-    {
-      name: "Page A",
-      uv: 4000,
-      pv: 2400,
-    },
-    {
-      name: "Page B",
-      uv: 3000,
-      pv: 1398,
-    },
-    {
-      name: "Page C",
-      uv: 2000,
-      pv: 9800,
-    },
-    {
-      name: "Page D",
-      uv: 2780,
-      pv: 3908,
-    },
-    {
-      name: "Page E",
-      uv: 1890,
-      pv: 4800,
-    },
-    {
-      name: "Page F",
-      uv: 2390,
-      pv: 3800,
-    },
-    {
-      name: "Page G",
-      uv: 3490,
-      pv: 4300,
-    },
-  ];
+  const [gstData, setGstData] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const startDate = form.startDate.value;
+    const endDate = form.endDate.value;
+
+    const URL = `https://api.nasa.gov/DONKI/GST?startDate=${startDate}&endDate=${endDate}&api_key=8e9gPsuHf2BhIzahsmUcZzUdqP7rWFLM6wLnP8jc`;
+    setIsLoading(true);
+    setGstData("");
+    fetch(URL)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setGstData(data);
+        setIsLoading(false);
+      });
+  };
   return (
     <section className="px-10 py-5 overflow-y-scroll scrollbar">
       <header>
         {/* search port */}
         <div className="bg-white shadow rounded-xl overflow-hidden">
           <div className="bg-primary text-white text-xl font-bold p-4">
-            <h2>Geomagnetic Storm Analyzer</h2>
+            <h2>Coronal Mass Ejection (CME) Analyser</h2>
           </div>
           {/* inputs */}
 
-          <form className="p-4">
+          <form className="p-4" onSubmit={handleSubmit}>
             <div className="flex items-center space-x-7">
               {/* start date */}
               <div className="flex flex-col">
                 <label className="text-sm font-semibold">Start Date</label>
                 <input
                   type="date"
-                  name=""
+                  name="startDate"
+                  defaultValue="2023-01-01"
                   className="bg-white rounded-lg border border-neutral-400 placeholder-neutral-500 placeholder:text-xs placeholder:font-bold outline-none py-2 px-4 w-full"
                 />
               </div>
               {/* end date */}
               <div className="flex flex-col">
-                <label className="text-sm font-semibold">Start Date</label>
+                <label className="text-sm font-semibold">End Date</label>
                 <input
                   type="date"
-                  name=""
+                  name="endDate"
                   className="bg-white rounded-lg border border-neutral-400 placeholder-neutral-500 placeholder:text-xs placeholder:font-bold outline-none py-2 px-4 w-full"
                 />
               </div>
-              {/* Label */}
-              <div className="flex flex-col">
-                <label className="text-sm font-semibold">Label</label>
-                <input
-                  type="text"
-                  name=""
-                  placeholder="Enter a text"
-                  className="bg-white rounded-lg border border-neutral-400 placeholder-neutral-500 placeholder:text-xs placeholder:font-bold outline-none py-2 px-4 w-full"
-                />
-              </div>
-            </div>
-            {/* checkbox */}
-            <div className="mt-5 flex items-center space-x-5">
-              <label className="flex items-center space-x-1">
-                <input
-                  type="checkbox"
-                  className="accent-primary w-5 h-5"
-                  defaultChecked
-                />{" "}
-                <span className="text-sm font-medium">Most Accurate Only</span>
-              </label>
-              <label className="flex items-center space-x-1">
-                <input
-                  type="checkbox"
-                  className="accent-primary w-5 h-5"
-                  defaultChecked
-                />{" "}
-                <span className="text-sm font-medium">Complete Entry Only</span>
-              </label>
             </div>
             {/* search button */}
             <div className="mt-5">
-              <button className="px-10 py-3 bg-primary rounded-lg text-white font-bold">
+              <button type="submit" className="px-10 py-3 bg-primary rounded-lg text-white font-bold">
                 Search
               </button>
             </div>
           </form>
         </div>
       </header>
+
+      {isLoading && <Loader />}
+
       {/* result */}
+      {gstData.length > 1 && (
+        <div className="bg-white shadow rounded-xl overflow-hidden mt-5">
+          <div className="bg-primary text-white text-xl font-bold p-4">
+            <h2>Result</h2>
+          </div>
 
-      <div className="bg-white shadow rounded-xl overflow-hidden mt-5">
-        <div className="bg-primary text-white text-xl font-bold p-4">
-          <h2>Result</h2>
-        </div>
+          <div className="h-[525px] overflow-y-scroll scrollbar ">
+            {/* result card */}
+            {gstData.map((item) => {
+              const barData = [];
+              item.allKpIndex.map((idx) => {
+                let tmp = {};
+                tmp.name = idx.observedTime;
+                tmp.kpIndex = idx.kpIndex;
+                barData.push(tmp);
+              });
 
-        <div className="h-[450px] overflow-y-scroll scrollbar">
-          {/* result card */}
-          <div className="bg-neutral-100 m-4 p-4 rounded-lg">
-            <BarChart width={730} height={250} data={data}>
-              <XAxis dataKey="name" />
-              <YAxis />
-              <Tooltip />
-              <Legend />
-              <Bar dataKey="pv" fill="#8884d8" />
-              <Bar dataKey="uv" fill="#82ca9d" />
-            </BarChart>
+              return (
+                <div key={item.speed} className="bg-neutral-100 m-4 p-4 rounded-lg grid grid-cols-3 font-medium">
+                  <div className="col-span-1">
+                    <h2 className="">
+                      <span className="font-bold ">All KP Index </span>
+                    </h2>
+
+                    <BarChart
+                      width={500}
+                      height={300}
+                      margin={{
+                        top: 5,
+                        right: 30,
+                        left: 20,
+                        bottom: 5,
+                      }}
+                      data={barData}
+                    >
+                      <XAxis dataKey="name" />
+                      <YAxis />
+                      <Tooltip />
+                      <Legend />
+                      <Bar dataKey="kpIndex" fill="#8884d8" />
+                    </BarChart>
+
+                    <h2 className="text-sm">
+                      <span className="font-bold ">GST ID: </span> {item.gstID}
+                    </h2>
+                    <h2 className="text-sm">
+                      <span className="font-bold ">Start Time: </span> {item.startTime}
+                    </h2>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
-      </div>
+      )}
     </section>
   );
 };
