@@ -47,7 +47,7 @@ const GeomagneticStormAnalyzer = () => {
               <label className="flex items-center space-x-1">
                 <input
                   type="checkbox"
-                  class="accent-primary w-5 h-5"
+                  className="accent-primary w-5 h-5"
                   defaultChecked
                 />{" "}
                 <span className="text-sm font-medium">Most Accurate Only</span>
@@ -55,7 +55,7 @@ const GeomagneticStormAnalyzer = () => {
               <label className="flex items-center space-x-1">
                 <input
                   type="checkbox"
-                  class="accent-primary w-5 h-5"
+                  className="accent-primary w-5 h-5"
                   defaultChecked
                 />{" "}
                 <span className="text-sm font-medium">Complete Entry Only</span>

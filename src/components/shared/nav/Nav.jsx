@@ -17,7 +17,7 @@ const Nav = () => {
           </div>
         </div>
         {/* nav items */}
-        <ul className="flex items-center space-x-9 font-semibold">
+        <ul className="flex items-center space-x-9 text-sm font-semibold">
           <li>
             <NavLink
               to="/"

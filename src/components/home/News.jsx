@@ -21,7 +21,7 @@ const News = () => {
           {/* search btn */}
           <div className="col-span-7">
             <div className="relative">
-              <div class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none">
+              <div className="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none">
                 <h6>
                   <FiSearch size={20} className="mr-2 text-neutral-500" />
                 </h6>
