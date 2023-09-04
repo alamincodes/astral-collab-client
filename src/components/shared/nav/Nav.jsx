@@ -17,7 +17,7 @@ const Nav = () => {
           </div>
         </div>
         {/* nav items */}
-        <ul className="flex items-center space-x-9 text-sm font-semibold">
+        <ul className="flex items-center space-x-9 text-lg font-semibold">
           <li>
             <NavLink
               to="/"
@@ -35,7 +35,7 @@ const Nav = () => {
                 isActive ? "text-primary font-semibold" : ""
               }
             >
-              Nasa Data Hub
+              NASA Data Hub
             </NavLink>
           </li>
           <li>Research Space</li>
