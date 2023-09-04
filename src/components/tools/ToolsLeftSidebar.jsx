@@ -7,16 +7,10 @@ const ToolsLeftSidebar = () => {
       {/* profile information */}
       <div className="flex items-center justify-between space-x-12 cursor-pointer rounded-full bg-secondary border-2 border-secondary p-1">
         <div className="flex items-center space-x-2">
-          <img
-            src="https://via.placeholder.com/100x100.png?text"
-            className="w-8 h-8 object-cover rounded-full"
-            alt=""
-          />
+          <img src="https://via.placeholder.com/100x100.png?text" className="w-8 h-8 object-cover rounded-full" alt="" />
           <div className="text-xs">
             <h4 className="font-semibold">Shawon Khan</h4>
-            <h5 className="text-gray-700 font-medium text-[10px]">
-              Graphics Designer
-            </h5>
+            <h5 className="text-gray-700 font-medium text-[10px]">Graphics Designer</h5>
           </div>
         </div>
         <div>
@@ -37,9 +31,7 @@ const ToolsLeftSidebar = () => {
             <li className="text-xs cursor-pointer hover:underline font-medium">
               <NavLink
                 to="/tools/coronal-mass-analyzer"
-                className={({ isActive }) =>
-                  isActive ? "text-primary font-semibold" : ""
-                }
+                className={({ isActive }) => (isActive ? "text-primary font-semibold" : "")}
               >
                 Coronal Mass Ejection Analyzer
               </NavLink>
@@ -47,9 +39,7 @@ const ToolsLeftSidebar = () => {
             <li className="text-xs cursor-pointer hover:underline font-medium ">
               <NavLink
                 to="/tools/interplanetary-shock-analyzer"
-                className={({ isActive }) =>
-                  isActive ? "text-primary font-semibold" : ""
-                }
+                className={({ isActive }) => (isActive ? "text-primary font-semibold" : "")}
               >
                 Interplanetary Shock Analyzer
               </NavLink>
@@ -57,12 +47,25 @@ const ToolsLeftSidebar = () => {
             <li className="text-xs cursor-pointer hover:underline font-medium ">
               <NavLink
                 to="/tools/geomagnetic-storm-analyzer"
-                className={({ isActive }) =>
-                  isActive ? "text-primary font-semibold" : ""
-                }
+                className={({ isActive }) => (isActive ? "text-primary font-semibold" : "")}
               >
                 Geomagnetic Storm Analyzer
               </NavLink>
+            </li>
+            <li className="text-xs cursor-pointer hover:underline font-medium ">
+              <NavLink to="/tools/geomagnetic-storm-analyzer">Solar Flare (FLR) Analyzer</NavLink>
+            </li>
+            <li className="text-xs cursor-pointer hover:underline font-medium ">
+              <NavLink to="/tools/geomagnetic-storm-analyzer">Solar Energetic Particle (SEP) Analyzer</NavLink>
+            </li>
+            <li className="text-xs cursor-pointer hover:underline font-medium ">
+              <NavLink to="/tools/geomagnetic-storm-analyzer">Magnetopause Crossing (MPC) Analyzer</NavLink>
+            </li>
+            <li className="text-xs cursor-pointer hover:underline font-medium ">
+              <NavLink to="/tools/geomagnetic-storm-analyzer">Radiation Belt Enhancement (RBE) Analyzer</NavLink>
+            </li>
+            <li className="text-xs cursor-pointer hover:underline font-medium ">
+              <NavLink to="/tools/geomagnetic-storm-analyzer">WSA+EnlilSimulation Analyzer</NavLink>
             </li>
           </ul>
           {/* category */}
