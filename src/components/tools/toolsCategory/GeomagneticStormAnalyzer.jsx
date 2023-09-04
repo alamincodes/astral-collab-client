@@ -57,7 +57,10 @@ const GeomagneticStormAnalyzer = () => {
             </div>
             {/* search button */}
             <div className="mt-5">
-              <button type="submit" className="px-10 py-3 bg-primary rounded-lg text-white font-bold">
+              <button
+                type="submit"
+                className="px-10 py-3 bg-primary rounded-lg text-white font-bold"
+              >
                 Search
               </button>
             </div>
@@ -71,7 +74,7 @@ const GeomagneticStormAnalyzer = () => {
       {gstData.length > 1 && (
         <div className="bg-white shadow rounded-xl overflow-hidden mt-5">
           <div className="bg-primary text-white text-xl font-bold p-4">
-            <h2>Result</h2>
+            <h2>Results</h2>
           </div>
 
           <div className="h-[525px] overflow-y-scroll scrollbar ">
@@ -86,7 +89,10 @@ const GeomagneticStormAnalyzer = () => {
               });
 
               return (
-                <div key={item.speed} className="bg-neutral-100 m-4 p-4 rounded-lg grid grid-cols-3 font-medium">
+                <div
+                  key={item.speed}
+                  className="bg-neutral-100 m-4 p-4 rounded-lg grid grid-cols-3 font-medium"
+                >
                   <div className="col-span-1">
                     <h2 className="">
                       <span className="font-bold ">All KP Index </span>
@@ -114,7 +120,8 @@ const GeomagneticStormAnalyzer = () => {
                       <span className="font-bold ">GST ID: </span> {item.gstID}
                     </h2>
                     <h2 className="text-sm">
-                      <span className="font-bold ">Start Time: </span> {item.startTime}
+                      <span className="font-bold ">Start Time: </span>{" "}
+                      {item.startTime}
                     </h2>
                   </div>
                 </div>

@@ -139,57 +139,105 @@ const CoronalMassAnalyzer = () => {
       {coronalMass.length > 1 && (
         <div className="bg-white shadow rounded-xl overflow-hidden mt-5">
           <div className="bg-primary text-white text-xl font-bold p-4">
-            <h2>Result</h2>
+            <h2>Results</h2>
           </div>
 
-          <div className="h-[450px] overflow-y-scroll scrollbar">
+          <div className="h-[450px] overflow-y-scroll grid grid-cols-2">
             {/* result card */}
-            {coronalMass.map((item) => {
+            {coronalMass.map((item, index) => {
               return (
                 <div
                   key={item.speed}
-                  className="bg-neutral-100 m-4 p-4 rounded-lg grid grid-cols-3 font-medium"
+                  className="bg-neutral-100 p-2 font-medium "
                 >
-                  <div className="col-span-1">
-                    <h2 className="text-sm">
-                      <span className="font-bold ">Time: </span> {item.time21_5}
-                    </h2>
-                    <h2 className="text-sm">
-                      <span className="font-bold ">Latitude: </span>{" "}
-                      {item.latitude}
-                    </h2>
-                    <h2 className="text-sm">
-                      <span className="font-bold ">Longitude: </span>{" "}
-                      {item.longitude}
-                    </h2>
-                    <h2 className="text-sm">
-                      <span className="font-bold ">Speed: </span> {item.speed}
-                    </h2>
-                    <h2 className="text-sm">
-                      <span className="font-bold ">HalfAngle: </span>{" "}
-                      {item.halfAngle}
-                    </h2>
-                    <h2 className="text-sm">
-                      <span className="font-bold ">Most Accurate: </span>{" "}
-                      {item.isMostAccurate}
-                    </h2>
-                    <h2 className="text-sm">
-                      <span className="font-bold ">Catalog: </span>{" "}
-                      {item.catalog}
-                    </h2>
-                    <a
-                      target="_blank"
-                      href={item.link}
-                      className="underline font-bold"
-                    >
-                      Linked page
-                    </a>
-                  </div>
-                  <div className="col-span-2">
-                    <p className="text-sm">
-                      {" "}
-                      <span className="font-bold">Note:</span> {item.note}{" "}
-                    </p>
+                  <div className="">
+                    <table className="overflow-hidden rounded-lg bg-white shadow-md text-sm w-full">
+                      <tbody>
+                        <tr className="border-b">
+                          <td className="px-6 py-3">
+                            <h2 className="text-xl font-bold">Result {index + 1}</h2>
+                          </td>
+                        </tr>
+                        <tr className="border-b">
+                          <td className="whitespace-nowrap px-6 py-3 text-left">
+                            Time
+                          </td>
+                          <td className="whitespace-nowrap px-6 py-3 text-left">
+                            {item.time21_5}
+                          </td>
+                        </tr>
+                        <tr className="border-b">
+                          <td className="whitespace-nowrap px-6 py-3 text-left">
+                            Latitude
+                          </td>
+                          <td className="whitespace-nowrap px-6 py-3 text-left">
+                            {item.latitude}
+                          </td>
+                        </tr>
+                        <tr className="border-b">
+                          <td className="whitespace-nowrap px-6 py-3 text-left">
+                            Longitude
+                          </td>
+                          <td className="whitespace-nowrap px-6 py-3 text-left">
+                            {item.longitude}
+                          </td>
+                        </tr>
+                        <tr className="border-b">
+                          <td className="whitespace-nowrap px-6 py-3 text-left">
+                            Speed
+                          </td>
+                          <td className="whitespace-nowrap px-6 py-3 text-left">
+                            {item.speed}
+                          </td>
+                        </tr>
+                        <tr className="border-b">
+                          <td className="whitespace-nowrap px-6 py-3 text-left">
+                            HalfAngle
+                          </td>
+                          <td className="whitespace-nowrap px-6 py-3 text-left">
+                            {item.halfAngle}
+                          </td>
+                        </tr>
+                        <tr className="border-b">
+                          <td className="whitespace-nowrap px-6 py-3 text-left">
+                            Most Accurate:
+                          </td>
+                          <td className="whitespace-nowrap px-6 py-3 text-left">
+                            {item.halfAngle}
+                          </td>
+                        </tr>
+                        <tr className="border-b">
+                          <td className="whitespace-nowrap px-6 py-3 text-left">
+                            Catalog:
+                          </td>
+                          <td className="whitespace-nowrap px-6 py-3 text-left">
+                            {item.catalog}
+                          </td>
+                        </tr>
+                        <tr className="border-b">
+                          <td className="whitespace-nowrap px-6 py-3 text-left">
+                            Link:
+                          </td>
+                          <td className="whitespace-nowrap px-6 py-3 text-left">
+                            <a
+                              target="_blank"
+                              className="underline font-bold text-blue-600"
+                              href={item.link}
+                            >
+                              Click
+                            </a>
+                          </td>
+                        </tr>
+                        <tr className="border-b max-w-6xl">
+                          <td className="whitespace-nowrap px-6 py-3 text-left">
+                            {item.note.length > 25
+                              ? item.note.substr(0, 25) + "... See more"
+                              : item.note}
+                          </td>
+                        </tr>
+                        {/* Add more rows as needed */}
+                      </tbody>
+                    </table>
                   </div>
                 </div>
               );
