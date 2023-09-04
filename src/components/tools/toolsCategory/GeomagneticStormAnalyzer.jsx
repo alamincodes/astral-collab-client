@@ -1,6 +1,44 @@
 import React from "react";
+import { BarChart, Legend, XAxis, YAxis, Bar, Tooltip } from "recharts";
 
 const GeomagneticStormAnalyzer = () => {
+  const data = [
+    {
+      name: "Page A",
+      uv: 4000,
+      pv: 2400,
+    },
+    {
+      name: "Page B",
+      uv: 3000,
+      pv: 1398,
+    },
+    {
+      name: "Page C",
+      uv: 2000,
+      pv: 9800,
+    },
+    {
+      name: "Page D",
+      uv: 2780,
+      pv: 3908,
+    },
+    {
+      name: "Page E",
+      uv: 1890,
+      pv: 4800,
+    },
+    {
+      name: "Page F",
+      uv: 2390,
+      pv: 3800,
+    },
+    {
+      name: "Page G",
+      uv: 3490,
+      pv: 4300,
+    },
+  ];
   return (
     <section className="px-10 py-5 overflow-y-scroll scrollbar">
       <header>
@@ -80,116 +118,14 @@ const GeomagneticStormAnalyzer = () => {
         <div className="h-[450px] overflow-y-scroll scrollbar">
           {/* result card */}
           <div className="bg-neutral-100 m-4 p-4 rounded-lg">
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde
-              ratione officiis soluta omnis dolorum ea fugiat, eligendi ipsa aut
-              reiciendis nulla quas sint voluptatibus ipsam earum! Iusto
-              cupiditate, fugiat exercitationem, architecto vitae cumque,
-              voluptas quae asperiores fuga beatae adipisci quidem reiciendis.
-              Nemo reprehenderit maiores cum obcaecati dolore esse cupiditate
-              consequatur voluptate molestias ullam quis, magnam facere, quae
-              modi. Optio voluptatibus exercitationem sit quam asperiores magnam
-              vel nihil reiciendis explicabo! In fugit ipsa qui odio, et quas a
-              quia molestias sint dignissimos ad debitis fugiat voluptates
-              provident, modi natus. Laborum deserunt saepe officia
-              exercitationem aut adipisci magni consequatur, consectetur sequi!
-              Mollitia sunt, omnis, porro odio at doloremque in itaque placeat
-              quidem ex ea possimus blanditiis voluptates quaerat
-              exercitationem? Tempore odio ad maiores autem quos. Sequi velit
-              perspiciatis dolorum asperiores facere veritatis perferendis
-              voluptatum amet suscipit, iure placeat illo. Dolor vero cum
-              numquam nihil quam, alias consectetur nulla, eaque dicta provident
-              repellendus hic similique beatae officia culpa sint exercitationem
-              nam facere in necessitatibus expedita consequatur reiciendis ea
-              ipsa! Ea aperiam culpa debitis perspiciatis ipsam dolores, dolore
-              corrupti, numquam nam laborum, expedita illo. Quasi amet illum
-              asperiores porro, ullam harum sed aliquam adipisci cumque est sunt
-              distinctio obcaecati magni nesciunt alias quae reiciendis!
-            </p>
-          </div>
-          <div className="bg-neutral-100 m-4 p-4 rounded-lg">
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde
-              ratione officiis soluta omnis dolorum ea fugiat, eligendi ipsa aut
-              reiciendis nulla quas sint voluptatibus ipsam earum! Iusto
-              cupiditate, fugiat exercitationem, architecto vitae cumque,
-              voluptas quae asperiores fuga beatae adipisci quidem reiciendis.
-              Nemo reprehenderit maiores cum obcaecati dolore esse cupiditate
-              consequatur voluptate molestias ullam quis, magnam facere, quae
-              modi. Optio voluptatibus exercitationem sit quam asperiores magnam
-              vel nihil reiciendis explicabo! In fugit ipsa qui odio, et quas a
-              quia molestias sint dignissimos ad debitis fugiat voluptates
-              provident, modi natus. Laborum deserunt saepe officia
-              exercitationem aut adipisci magni consequatur, consectetur sequi!
-              Mollitia sunt, omnis, porro odio at doloremque in itaque placeat
-              quidem ex ea possimus blanditiis voluptates quaerat
-              exercitationem? Tempore odio ad maiores autem quos. Sequi velit
-              perspiciatis dolorum asperiores facere veritatis perferendis
-              voluptatum amet suscipit, iure placeat illo. Dolor vero cum
-              numquam nihil quam, alias consectetur nulla, eaque dicta provident
-              repellendus hic similique beatae officia culpa sint exercitationem
-              nam facere in necessitatibus expedita consequatur reiciendis ea
-              ipsa! Ea aperiam culpa debitis perspiciatis ipsam dolores, dolore
-              corrupti, numquam nam laborum, expedita illo. Quasi amet illum
-              asperiores porro, ullam harum sed aliquam adipisci cumque est sunt
-              distinctio obcaecati magni nesciunt alias quae reiciendis!
-            </p>
-          </div>
-          <div className="bg-neutral-100 m-4 p-4 rounded-lg">
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde
-              ratione officiis soluta omnis dolorum ea fugiat, eligendi ipsa aut
-              reiciendis nulla quas sint voluptatibus ipsam earum! Iusto
-              cupiditate, fugiat exercitationem, architecto vitae cumque,
-              voluptas quae asperiores fuga beatae adipisci quidem reiciendis.
-              Nemo reprehenderit maiores cum obcaecati dolore esse cupiditate
-              consequatur voluptate molestias ullam quis, magnam facere, quae
-              modi. Optio voluptatibus exercitationem sit quam asperiores magnam
-              vel nihil reiciendis explicabo! In fugit ipsa qui odio, et quas a
-              quia molestias sint dignissimos ad debitis fugiat voluptates
-              provident, modi natus. Laborum deserunt saepe officia
-              exercitationem aut adipisci magni consequatur, consectetur sequi!
-              Mollitia sunt, omnis, porro odio at doloremque in itaque placeat
-              quidem ex ea possimus blanditiis voluptates quaerat
-              exercitationem? Tempore odio ad maiores autem quos. Sequi velit
-              perspiciatis dolorum asperiores facere veritatis perferendis
-              voluptatum amet suscipit, iure placeat illo. Dolor vero cum
-              numquam nihil quam, alias consectetur nulla, eaque dicta provident
-              repellendus hic similique beatae officia culpa sint exercitationem
-              nam facere in necessitatibus expedita consequatur reiciendis ea
-              ipsa! Ea aperiam culpa debitis perspiciatis ipsam dolores, dolore
-              corrupti, numquam nam laborum, expedita illo. Quasi amet illum
-              asperiores porro, ullam harum sed aliquam adipisci cumque est sunt
-              distinctio obcaecati magni nesciunt alias quae reiciendis!
-            </p>
-          </div>
-          <div className="bg-neutral-100 m-4 p-4 rounded-lg">
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde
-              ratione officiis soluta omnis dolorum ea fugiat, eligendi ipsa aut
-              reiciendis nulla quas sint voluptatibus ipsam earum! Iusto
-              cupiditate, fugiat exercitationem, architecto vitae cumque,
-              voluptas quae asperiores fuga beatae adipisci quidem reiciendis.
-              Nemo reprehenderit maiores cum obcaecati dolore esse cupiditate
-              consequatur voluptate molestias ullam quis, magnam facere, quae
-              modi. Optio voluptatibus exercitationem sit quam asperiores magnam
-              vel nihil reiciendis explicabo! In fugit ipsa qui odio, et quas a
-              quia molestias sint dignissimos ad debitis fugiat voluptates
-              provident, modi natus. Laborum deserunt saepe officia
-              exercitationem aut adipisci magni consequatur, consectetur sequi!
-              Mollitia sunt, omnis, porro odio at doloremque in itaque placeat
-              quidem ex ea possimus blanditiis voluptates quaerat
-              exercitationem? Tempore odio ad maiores autem quos. Sequi velit
-              perspiciatis dolorum asperiores facere veritatis perferendis
-              voluptatum amet suscipit, iure placeat illo. Dolor vero cum
-              numquam nihil quam, alias consectetur nulla, eaque dicta provident
-              repellendus hic similique beatae officia culpa sint exercitationem
-              nam facere in necessitatibus expedita consequatur reiciendis ea
-              ipsa! Ea aperiam culpa debitis perspiciatis ipsam dolores, dolore
-              corrupti, numquam nam laborum, expedita illo. Quasi amet illum
-              asperiores porro, ullam harum sed aliquam adipisci cumque est sunt
-              distinctio obcaecati magni nesciunt alias quae reiciendis!
-            </p>
+            <BarChart width={730} height={250} data={data}>
+              <XAxis dataKey="name" />
+              <YAxis />
+              <Tooltip />
+              <Legend />
+              <Bar dataKey="pv" fill="#8884d8" />
+              <Bar dataKey="uv" fill="#82ca9d" />
+            </BarChart>
           </div>
         </div>
       </div>
