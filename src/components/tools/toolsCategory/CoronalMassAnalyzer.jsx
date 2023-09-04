@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import Loader from "../../shared/Loader";
 
 const CoronalMassAnalyzer = () => {
   const [mostAccurate, setMostAccurate] = useState(true);
   const [coronalMass, setCoronalMass] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   // console.log(mostAccurate);
   const handleCheckboxChange = () => {
     // Update the state when the checkbox is clicked
@@ -25,14 +27,16 @@ const CoronalMassAnalyzer = () => {
       catalog,
       mostAccurateOnly,
     };
-    console.log(info);
 
     const URL = `https://api.nasa.gov/DONKI/CMEAnalysis?startDate=${startDate}&endDate=${endDate}&mostAccurateOnly=${mostAccurate}&speed=${speed}&halfAngle=${halfAngle}&catalog=${catalog}&api_key=8e9gPsuHf2BhIzahsmUcZzUdqP7rWFLM6wLnP8jc`;
+    setIsLoading(true);
+    setCoronalMass("");
     fetch(URL)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
         setCoronalMass(data);
+        setIsLoading(false);
       });
   };
 
@@ -130,31 +134,69 @@ const CoronalMassAnalyzer = () => {
         </div>
       </header>
 
+      {isLoading && <Loader />}
       {/* result */}
+      {coronalMass.length > 1 && (
+        <div className="bg-white shadow rounded-xl overflow-hidden mt-5">
+          <div className="bg-primary text-white text-xl font-bold p-4">
+            <h2>Result</h2>
+          </div>
 
-      <div className="bg-white shadow rounded-xl overflow-hidden mt-5">
-        <div className="bg-primary text-white text-xl font-bold p-4">
-          <h2>Result</h2>
-        </div>
-
-        <div className="h-[450px] overflow-y-scroll scrollbar">
-          {/* result card */}
-          {coronalMass.map((item) => {
-            return (
-              <div
-                key={item.speed}
-                className="bg-neutral-100 m-4 p-4 rounded-lg"
-              >
-                <div>
-                  <h2 className="text-sm">
-                    <span className="font-bold ">Time: </span> {item.time21_5}
-                  </h2>
+          <div className="h-[450px] overflow-y-scroll scrollbar">
+            {/* result card */}
+            {coronalMass.map((item) => {
+              return (
+                <div
+                  key={item.speed}
+                  className="bg-neutral-100 m-4 p-4 rounded-lg grid grid-cols-3 font-medium"
+                >
+                  <div className="col-span-1">
+                    <h2 className="text-sm">
+                      <span className="font-bold ">Time: </span> {item.time21_5}
+                    </h2>
+                    <h2 className="text-sm">
+                      <span className="font-bold ">Latitude: </span>{" "}
+                      {item.latitude}
+                    </h2>
+                    <h2 className="text-sm">
+                      <span className="font-bold ">Longitude: </span>{" "}
+                      {item.longitude}
+                    </h2>
+                    <h2 className="text-sm">
+                      <span className="font-bold ">Speed: </span> {item.speed}
+                    </h2>
+                    <h2 className="text-sm">
+                      <span className="font-bold ">HalfAngle: </span>{" "}
+                      {item.halfAngle}
+                    </h2>
+                    <h2 className="text-sm">
+                      <span className="font-bold ">Most Accurate: </span>{" "}
+                      {item.isMostAccurate}
+                    </h2>
+                    <h2 className="text-sm">
+                      <span className="font-bold ">Catalog: </span>{" "}
+                      {item.catalog}
+                    </h2>
+                    <a
+                      target="_blank"
+                      href={item.link}
+                      className="underline font-bold"
+                    >
+                      Linked page
+                    </a>
+                  </div>
+                  <div className="col-span-2">
+                    <p className="text-sm">
+                      {" "}
+                      <span className="font-bold">Note:</span> {item.note}{" "}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
-      </div>
+      )}
     </section>
   );
 };
