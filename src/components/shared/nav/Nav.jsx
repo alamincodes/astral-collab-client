@@ -1,21 +1,26 @@
 import React from "react";
 import Logo from "../../../assets/Logo.png";
 import { HiOutlineSupport } from "react-icons/hi";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 const Nav = () => {
   return (
     <header className="py-6 bg-white shadow-sm border-b sticky top-0 z-50">
       <div className="myContainer flex justify-between">
         {/* logo */}
-        <div className="flex items-center">
-          <img src={Logo} className="h-10" alt="" />
-          <div>
+       
+         <Link to='/'>
+          <div className="flex items-center">
+         <img src={Logo} className="h-10" alt="" />
+         <div>
             <h4 className="text-xl font-bold">Astral Collab</h4>
             <h6 className="font-bold text-xs text-transparent bg-clip-text bg-gradient-to-r from-[#e66cfb] to-[#5268f2]">
               bridging minds, igniting Discoverice
             </h6>
           </div>
-        </div>
+          </div>
+         </Link>
+          
+        
         {/* nav items */}
         <ul className="flex items-center space-x-9 text-lg font-semibold">
           <li>
@@ -67,7 +72,7 @@ const Nav = () => {
               }
             >
              Mentor Hub
-            </NavLink></li>
+            </NavLink></li> 
           <li> <NavLink
               to="/virtualLab"
               className={({ isActive }) =>

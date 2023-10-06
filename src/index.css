@@ -64,7 +64,9 @@
   }
 }
 }
-
+.swiper-button-prev, .swiper-button-disabled{
+ display: none;
+}
 /* width */
 ::-webkit-scrollbar {
     width: 7px;

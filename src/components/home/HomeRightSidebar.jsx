@@ -1,8 +1,15 @@
 import React from "react";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import 'swiper/css/effect-fade';
+import { Autoplay, Pagination, Navigation, EffectFade } from 'swiper/modules';
+
 
 const HomeRightSidebar = () => {
   return (
-    <aside className="bg-white shadow h-screen myContainer pt-10 fixed">
+    <aside className="bg-white shadow h-screen myContainer pt-10 fixed w-full">
       {/* What's going on */}
       <div className="p-3 flex flex-col capitalize">
         <h4 className="font-semibold">What's going on</h4>
@@ -47,11 +54,45 @@ const HomeRightSidebar = () => {
       </div>
 
       <div>
+      <Swiper
+        spaceBetween={30}
+        effect="fade"
+        centeredSlides={true}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={true}
+        modules={[Autoplay, Pagination, Navigation, EffectFade]}
+        className="mySwiper"
+      >
+        <SwiperSlide >
         <img
           src="https://cdn.discordapp.com/attachments/1147637810308857969/1147855756331331646/shutterstock-1041249343.png"
-          className="rounded-xl"
+          className="rounded-xl max-w-[450px] min-w-[450px] max-h-[300px] min-h-[300px] object-cover"
           alt=""
         />
+        </SwiperSlide>
+        <SwiperSlide >
+        <img
+          src="https://images.pexels.com/photos/1275413/pexels-photo-1275413.jpeg"
+          className="rounded-xl max-w-[450px] min-w-[450px] max-h-[300px] min-h-[300px] object-cover"
+          alt=""
+        />
+        </SwiperSlide>
+        <SwiperSlide >
+        <img
+          src="https://images.pexels.com/photos/360912/pexels-photo-360912.jpeg"
+          className="rounded-xl max-w-[450px] min-w-[450px] max-h-[300px] min-h-[300px] object-cover"
+          alt=""
+        />
+        </SwiperSlide>
+        
+      </Swiper>
+      
       </div>
     </aside>
   );
