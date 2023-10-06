@@ -74,7 +74,7 @@ const News = () => {
           <div className="flex justify-between">
             <div className="flex items-center space-x-2">
               <img
-                src="https://via.placeholder.com/100x100.png?text"
+                src="https://xsgames.co/randomusers/assets/avatars/male/74.jpg"
                 className="w-8 h-8 object-cover rounded-full"
                 alt=""
               />
@@ -87,9 +87,9 @@ const News = () => {
             </div>
             <div className="flex items-center space-x-3">
               <div className="flex -space-x-4">
-                <h4 className="h-10 w-10 bg-gray-200 border-2 border-white rounded-full"></h4>
-                <h4 className="h-10 w-10 bg-gray-200 border-2 border-white rounded-full"></h4>
-                <h4 className="h-10 w-10 bg-gray-200 border-2 border-white rounded-full"></h4>
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" className="h-10 w-10 rounded-full border-2 border-primary object-cover" alt="" />
+                <img src="https://randomuser.me/api/portraits/men/60.jpg" className="h-10 w-10 rounded-full border-2 border-primary object-cover"  alt="" />
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThjs33T9bB5kKl3FzGVjYOHjy4e_ieWjS7DMVd5iF92nrkaiwSFktYUN1U-402K0t2sjk&usqp=CAU" className="h-10 w-10 rounded-full border-2 border-primary object-cover" alt="" />
               </div>
               <h5 className="font-bold"> 3 contributors</h5>
               <h5 className=" text-primary bg-secondary font-medium px-4 py-1 rounded-full text-sm">
