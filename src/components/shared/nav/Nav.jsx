@@ -38,7 +38,17 @@ const Nav = () => {
               NASA Data Hub
             </NavLink>
           </li>
-          <li>Research Space</li>
+          <li>
+          <NavLink
+              to="/researchSpace"
+              className={({ isActive }) =>
+                isActive ? "text-primary font-semibold" : ""
+              }
+            >
+              Research Space
+            </NavLink>
+
+          </li>
           <li>Code space</li>
           <li> <NavLink
               to="/mentorHub"
