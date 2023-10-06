@@ -5,6 +5,7 @@ import ToolsIndex from "../tools/ToolsIndex";
 import CoronalMassAnalyzer from "../tools/toolsCategory/CoronalMassAnalyzer";
 import InterplanetaryShockAnalyzer from "../tools/toolsCategory/InterplanetaryShockAnalyzer";
 import GeomagneticStormAnalyzer from "../tools/toolsCategory/GeomagneticStormAnalyzer";
+import MentorHub from "../mentorHub/MentorHub";
 
 export const routes = createBrowserRouter([
   {
@@ -13,6 +14,10 @@ export const routes = createBrowserRouter([
       {
         path: "/",
         element: <HomeIndex />,
+      },
+      {
+        path: "/mentorHub",
+        element: <MentorHub />,
       },
       {
         path: "/tools",

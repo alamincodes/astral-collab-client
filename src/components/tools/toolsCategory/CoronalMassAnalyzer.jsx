@@ -17,7 +17,7 @@ const CoronalMassAnalyzer = () => {
     const endDate = form.endDate.value;
     const speed = form.speed.value;
     const halfAngle = form.halfAngle.value;
-    const catalog = form.catalog.value;
+    const catalog = form.catalog.value; 
 
     const URL = `https://api.nasa.gov/DONKI/CMEAnalysis?startDate=${startDate}&endDate=${endDate}&mostAccurateOnly=${mostAccurate}&speed=${speed}&halfAngle=${halfAngle}&catalog=${catalog}&api_key=8e9gPsuHf2BhIzahsmUcZzUdqP7rWFLM6wLnP8jc`;
     setIsLoading(true);

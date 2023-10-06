@@ -40,7 +40,14 @@ const Nav = () => {
           </li>
           <li>Research Space</li>
           <li>Code space</li>
-          <li>Mentor Hub</li>
+          <li> <NavLink
+              to="/mentorHub"
+              className={({ isActive }) =>
+                isActive ? "text-primary font-semibold" : ""
+              }
+            >
+             Mentor Hub
+            </NavLink></li>
           <li>Virtual Lab</li>
         </ul>
         {/* profile info */}
@@ -50,24 +57,7 @@ const Nav = () => {
           </span>
           Support
         </button>
-        {/* <div className="flex items-center space-x-12 cursor-pointer rounded-full bg-secondary border-2 border-primary p-1">
-          <div className="flex items-center space-x-2">
-            <img
-              src="https://via.placeholder.com/100x100.png?text"
-              className="w-8 h-8 object-cover rounded-full"
-              alt=""
-            />
-            <div className="text-xs">
-              <h4 className="font-semibold">Shawon Khan</h4>
-              <h5 className="text-gray-700 font-medium text-[10px]">
-                Graphics Designer
-              </h5>
-            </div>
-          </div>
-          <div>
-            <FiSettings size={20} className="text-primary" />
-          </div>
-        </div> */}
+        
       </div>
     </header>
   );
