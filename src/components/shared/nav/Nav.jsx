@@ -39,7 +39,7 @@ const Nav = () => {
             </NavLink>
           </li>
           <li>
-          <NavLink
+            <NavLink
               to="/researchSpace"
               className={({ isActive }) =>
                 isActive ? "text-primary font-semibold" : ""
@@ -49,7 +49,17 @@ const Nav = () => {
             </NavLink>
 
           </li>
-          <li>Code space</li>
+          <li>
+
+          <NavLink
+              to="/codeSpace"
+              className={({ isActive }) =>
+                isActive ? "text-primary font-semibold" : ""
+              }
+            >
+             Code space
+            </NavLink>
+          </li>
           <li> <NavLink
               to="/mentorHub"
               className={({ isActive }) =>
@@ -58,7 +68,15 @@ const Nav = () => {
             >
              Mentor Hub
             </NavLink></li>
-          <li>Virtual Lab</li>
+          <li> <NavLink
+              to="/virtualLab"
+              className={({ isActive }) =>
+                isActive ? "text-primary font-semibold" : ""
+              }
+            >
+             Virtual Lab
+            </NavLink></li>
+          
         </ul>
         {/* profile info */}
         <button className="flex items-center font-bold bg-secondary border-2 border-primary rounded-full px-6 py-2 text-primary">

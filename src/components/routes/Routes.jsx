@@ -7,6 +7,8 @@ import InterplanetaryShockAnalyzer from "../tools/toolsCategory/InterplanetarySh
 import GeomagneticStormAnalyzer from "../tools/toolsCategory/GeomagneticStormAnalyzer";
 import MentorHub from "../mentorHub/MentorHub";
 import ResearchSpace from "../researchSpace/ResearchSpace";
+import CodeSpace from "../codeSoace/CodeSpace";
+import VirtualLab from "../virtualLab/VirtualLab";
 
 export const routes = createBrowserRouter([
   {
@@ -21,8 +23,16 @@ export const routes = createBrowserRouter([
         element: <MentorHub />,
       },
       {
+        path: "/virtualLab",
+        element: <VirtualLab />,
+      },
+      {
         path: "/researchSpace",
         element: <ResearchSpace />,
+      },
+      {
+        path: "/codeSpace",
+        element: <CodeSpace/>,
       },
       {
         path: "/tools",
