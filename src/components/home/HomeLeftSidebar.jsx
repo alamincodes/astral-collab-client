@@ -8,7 +8,7 @@ const HomeLeftSidebar = () => {
       <div className="flex items-center justify-between space-x-12 cursor-pointer rounded-full bg-secondary border-2 border-secondary p-1">
         <div className="flex items-center space-x-2">
           <img
-            src="https://via.placeholder.com/100x100.png?text"
+            src="https://xsgames.co/randomusers/assets/avatars/male/74.jpg"
             className="w-8 h-8 object-cover rounded-full"
             alt=""
           />
