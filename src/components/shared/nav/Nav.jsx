@@ -9,7 +9,8 @@ const Nav = () => {
         {/* logo */}
        
          <Link to='/'>
-          <div className="flex items-center">
+          <div className="flex items-center relative">
+          <h4 className="absolute right-5 -top-2 font-bold bg-yellow-400 px-2 py-1 rounded-full"> Beta</h4>
          <img src={Logo} className="h-10" alt="" />
          <div>
             <h4 className="text-xl font-bold">Astral Collab</h4>

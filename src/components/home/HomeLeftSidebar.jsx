@@ -5,13 +5,13 @@ import WorkingModal from '../shared/WorkingModal';
 const HomeLeftSidebar = () => {
  const [isOpen, setIsOpen] = useState(false)
   return (
-    <aside className="bg-white shadow h-screen myContainer pt-5 fixed">
+    <aside className="bg-white shadow h-screen myContainer pt-5 fixed ">
 
     {
       isOpen && <WorkingModal isOpen={isOpen} setIsOpen={setIsOpen}/>
     }
       {/* profile information */}
-      <div className="flex items-center justify-between space-x-12 cursor-pointer rounded-full bg-secondary border-2 border-secondary p-1">
+      <div className="flex items-center justify-between space-x-12 cursor-pointer rounded-full bg-secondary border-2 border-secondary p-1 ">
         <div className="flex items-center space-x-2">
           <img
             src="https://xsgames.co/randomusers/assets/avatars/male/74.jpg"
