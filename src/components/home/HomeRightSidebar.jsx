@@ -1,17 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-fade';
 import { Autoplay, Pagination, Navigation, EffectFade } from 'swiper/modules';
+import WorkingModal from "../shared/WorkingModal";
 
 
 const HomeRightSidebar = () => {
+  const [isOpen, setIsOpen] = useState(false)
   return (
     <aside className="bg-white shadow h-screen myContainer pt-10 fixed w-full">
+    {
+      isOpen && <WorkingModal  isOpen={isOpen} setIsOpen={setIsOpen}/>
+    }
       {/* What's going on */}
-      <div className="p-3 flex flex-col capitalize">
+      <div onClick={()=>setIsOpen(true)}>
+      <div  className="p-3 flex flex-col capitalize">
         <h4 className="font-semibold">What's going on</h4>
         <div className="flex flex-col space-y-1 ml-2 border-l-2 border-gray-300 pl-2">
           <h5 className="text-sm underline">
@@ -38,6 +44,7 @@ const HomeRightSidebar = () => {
           <h5 className="text-sm underline">Women in space </h5>
           <h5 className="text-sm underline">Nasa's future mission</h5>
         </div>
+      </div>
       </div>
 
       {/* astronomy pictures */}

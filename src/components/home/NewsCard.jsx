@@ -95,7 +95,7 @@ const NewsCard = ({news}) => {
         </div>
         {/* buttons */}
         <div className="pt-3 flex justify-around">
-          <button onClick={handleVote} className={`border-2 bg-neutral-200 hover:scale-110 duration-300 transition-all hover:border-primary ${activeVote ==="active" && 'bg-primary text-white'} hover:bg-secondary hover:text-primary flex items-center space-x-2  font-semibold px-14 py-2 rounded-full`}>
+          <button onClick={handleVote} className={`border-2 bg-neutral-200 hover:scale-110 duration-300 transition-all hover:border-primary ${activeVote ==="active" && 'bg-primary text-white border-primary hover:bg-primary hover:text-white'} hover:bg-secondary hover:text-primary flex items-center space-x-2  font-semibold px-14 py-2 rounded-full`}>
             <span >
             {activeVote === 'active' ? <BiSolidUpvote size={20} className="mr-2"/> :  <BiUpvote size={20} className="mr-2"  />}
              
