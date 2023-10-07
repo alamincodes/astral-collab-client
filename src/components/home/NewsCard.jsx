@@ -3,7 +3,7 @@ import { BiUpvote , BiSolidUpvote} from "react-icons/bi";
 import { FaRegStar } from "react-icons/fa";
 import { HiOutlineBell } from "react-icons/hi2";
 const NewsCard = ({news}) => {
-  const { projectTitle, authorName, authorImage, authorDesignation, projectDescription, images} = news;
+  const { projectTitle, authorName, authorImage, authorDesignation, projectDescription, images, contributors, tags} = news;
     const [activeVote, setActiveVote] = useState('inactive');
     const [voteCount, setVoteCount] =  useState(Math.floor(Math.random() * 900) + 100)
     const [showFullDescription, setShowFullDescription] = useState(false)
@@ -49,7 +49,7 @@ const NewsCard = ({news}) => {
                 </h5>
               </div>
             </div>
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center space-x-2">
               <div className="flex -space-x-4">
          
                
@@ -58,11 +58,15 @@ const NewsCard = ({news}) => {
                 
               
               </div>
-              <h5 className="font-bold text-xs"> +3 contributors</h5>
-              <h5 className=" text-primary bg-secondary font-medium px-4 py-1 rounded-full text-sm">
+              <h5 className="font-bold text-xs"> +{contributors} contributors</h5>
+
+              {
+                tags.map(tag =><h5 className=" text-primary bg-secondary font-medium px-4 py-1 rounded-full text-sm">
                 {" "}
-                Astronomy{" "}
-              </h5>
+                {tag}
+              </h5> )
+              }
+              
             </div>
           </div>
         </div>

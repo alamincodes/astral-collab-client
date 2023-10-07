@@ -10,15 +10,19 @@ const News = () => {
       id:1,
       projectTitle:"Space Exploration",
       authorName:"David Henry",
-      authorImage:"https://randomuser.me/api/portraits/men/32.jpg",
+      authorImage: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThjs33T9bB5kKl3FzGVjYOHjy4e_ieWjS7DMVd5iF92nrkaiwSFktYUN1U-402K0t2sjk&usqp=CAU",
       authorDesignation:"Space Expert",
       projectDescription:"Space Exploration is the adventurous pursuit of exploring and studying the cosmos beyond our planet, Earth. It encompasses a wide range of missions and activities, including sending spacecraft to other celestial bodies like the Moon, Mars, and distant planets, as well as conducting experiments and research in the unique environment of space.",
       images:[
         "https://randomuser.me/api/portraits/men/32.jpg",
         "https://randomuser.me/api/portraits/men/60.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThjs33T9bB5kKl3FzGVjYOHjy4e_ieWjS7DMVd5iF92nrkaiwSFktYUN1U-402K0t2sjk&usqp=CAU",
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThjs33T9bB5kKl3FzGVjYOHjy4e_ieWjS7DMVd5iF92nrkaiwSFktYUN1U-402K0t2sjk&usqp=CAU"
-        
-      ]
+      ],
+      tags:[
+        "Exoplanets","Astronomy","Astrochemistry"
+      ],
+      contributors: 12,
     },
     {
       id:2,
@@ -28,17 +32,21 @@ const News = () => {
       authorDesignation:"Climate monitoring Expert",
       projectDescription:"Climate monitoring serves a critical role in understanding and responding to climate change. By collecting and analyzing data from various sources, including weather stations, satellites, and ocean buoys, scientists can identify trends and patterns that reveal the impacts of global warming and other climate-related phenomena",
       images:[
-        
+       
         "https://randomuser.me/api/portraits/men/60.jpg",
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThjs33T9bB5kKl3FzGVjYOHjy4e_ieWjS7DMVd5iF92nrkaiwSFktYUN1U-402K0t2sjk&usqp=CAU",
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThjs33T9bB5kKl3FzGVjYOHjy4e_ieWjS7DMVd5iF92nrkaiwSFktYUN1U-402K0t2sjk&usqp=CAU"
-      ]
+      ],
+      tags:[
+        "Space Weather","Astrochemistry"
+      ],
+      contributors: 16
     },
     {
       id:3,
       projectTitle:"Environmental Sustainability",
       authorName:"william Lucas",
-      authorImage:"https://randomuser.me/api/portraits/men/32.jpg",
+      authorImage: "https://randomuser.me/api/portraits/men/60.jpg",
       authorDesignation:"Environmental Sustainability Expert",
       projectDescription:"Environmental Sustainability is a concept and approach that aims to ensure the responsible and harmonious interaction between human activities and the natural environment, with the goal of preserving Earth's ecosystems and resources for current and future generations. It involves the careful management of resources, reducing environmental impact, and maintaining ecological balance.",
       images:[
@@ -46,13 +54,17 @@ const News = () => {
         "https://randomuser.me/api/portraits/men/60.jpg",
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThjs33T9bB5kKl3FzGVjYOHjy4e_ieWjS7DMVd5iF92nrkaiwSFktYUN1U-402K0t2sjk&usqp=CAU",
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThjs33T9bB5kKl3FzGVjYOHjy4e_ieWjS7DMVd5iF92nrkaiwSFktYUN1U-402K0t2sjk&usqp=CAU"
-      ]
+      ],
+      tags:[
+        "Astronomy","Astrochemistry","Space Weather"
+      ],
+      contributors: 8
     },
     {
       id:4,
       projectTitle:"Space Policy and Ethics", 
       authorName:"Json Roy",
-      authorImage:"https://randomuser.me/api/portraits/men/32.jpg",
+      authorImage:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThjs33T9bB5kKl3FzGVjYOHjy4e_ieWjS7DMVd5iF92nrkaiwSFktYUN1U-402K0t2sjk&usqp=CAU",
       authorDesignation:"Space policy and Ethics Expert",
       projectDescription:"Space Policy and Ethics is a multidisciplinary field that addresses the development of guidelines, regulations, and principles governing human activities in outer space.t involves the formulation of policies and ethical frameworks to ensure responsible and sustainable space exploration and utilization while considering the interests of various stakeholders, including governments, private companies, scientists, and the global community.",
       images:[
@@ -60,13 +72,17 @@ const News = () => {
         "https://randomuser.me/api/portraits/men/60.jpg",
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThjs33T9bB5kKl3FzGVjYOHjy4e_ieWjS7DMVd5iF92nrkaiwSFktYUN1U-402K0t2sjk&usqp=CAU",
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThjs33T9bB5kKl3FzGVjYOHjy4e_ieWjS7DMVd5iF92nrkaiwSFktYUN1U-402K0t2sjk&usqp=CAU"
-      ]
+      ],
+      tags:[
+        "Astronomy","Astrobiology","Space Exoplanets"
+      ],
+      contributors: 10
     },
     {
       id:5,
       projectTitle:"Planetary Protection", 
       authorName:"Lucas",
-      authorImage:"https://randomuser.me/api/portraits/men/32.jpg",
+      authorImage:"https://randomuser.me/api/portraits/men/60.jpg",
       authorDesignation:"Planetary Protection Expert",
       projectDescription:"Planetary Protection is a set of scientific, policy, and procedural measures designed to prevent the contamination of celestial bodies, such as planets and moons, with Earth's microorganisms, and to protect Earth from potential contamination by extraterrestrial materials. This field of study and practice is essential for maintaining the integrity of both scientific exploration and the search for extraterrestrial life.",
       images:[
@@ -74,22 +90,12 @@ const News = () => {
         "https://randomuser.me/api/portraits/men/60.jpg",
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThjs33T9bB5kKl3FzGVjYOHjy4e_ieWjS7DMVd5iF92nrkaiwSFktYUN1U-402K0t2sjk&usqp=CAU",
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThjs33T9bB5kKl3FzGVjYOHjy4e_ieWjS7DMVd5iF92nrkaiwSFktYUN1U-402K0t2sjk&usqp=CAU"
+      ],
+      tags:[
+        "Exoplanets","Astronomy","Astrochemistry"
       ]
     },
-    {
-      id:6,
-      projectTitle:"Planetary Protection", 
-      authorName:"Lucas",
-      authorImage:"https://randomuser.me/api/portraits/men/32.jpg",
-      authorDesignation:"Planetary Protection Expert",
-      projectDescription:"Planetary Protection is a set of scientific, policy, and procedural measures designed to prevent the contamination of celestial bodies, such as planets and moons, with Earth's microorganisms, and to protect Earth from potential contamination by extraterrestrial materials. This field of study and practice is essential for maintaining the integrity of both scientific exploration and the search for extraterrestrial life.",
-      images:[
-        "https://randomuser.me/api/portraits/men/32.jpg",
-        "https://randomuser.me/api/portraits/men/60.jpg",
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThjs33T9bB5kKl3FzGVjYOHjy4e_ieWjS7DMVd5iF92nrkaiwSFktYUN1U-402K0t2sjk&usqp=CAU",
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThjs33T9bB5kKl3FzGVjYOHjy4e_ieWjS7DMVd5iF92nrkaiwSFktYUN1U-402K0t2sjk&usqp=CAU"
-      ]
-    },
+   
 
   ]
   return (

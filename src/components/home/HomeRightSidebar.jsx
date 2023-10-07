@@ -79,21 +79,21 @@ const HomeRightSidebar = () => {
         <SwiperSlide >
         <img
           src="https://cdn.discordapp.com/attachments/1147637810308857969/1147855756331331646/shutterstock-1041249343.png"
-          className="rounded-xl max-w-[450px] min-w-[450px] max-h-[300px] min-h-[300px] object-cover"
+          className="rounded-xl max-w-[400px] min-w-[430px] max-h-[300px] min-h-[300px] object-cover"
           alt=""
         />
         </SwiperSlide>
         <SwiperSlide >
         <img
           src="https://images.pexels.com/photos/1275413/pexels-photo-1275413.jpeg"
-          className="rounded-xl max-w-[450px] min-w-[450px] max-h-[300px] min-h-[300px] object-cover"
+          className="rounded-xl max-w-[400px] min-w-[430px] max-h-[300px] min-h-[300px] object-cover"
           alt=""
         />
         </SwiperSlide>
         <SwiperSlide >
         <img
           src="https://images.pexels.com/photos/360912/pexels-photo-360912.jpeg"
-          className="rounded-xl max-w-[450px] min-w-[450px] max-h-[300px] min-h-[300px] object-cover"
+          className="rounded-xl max-w-[400px] min-w-[430px] max-h-[300px] min-h-[300px] object-cover"
           alt=""
         />
         </SwiperSlide>
