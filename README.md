@@ -1,8 +1,22 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Astral-Collab
 
-Currently, two official plugins are available:
+AstralCollab The future of collaborative exploration. Uniting open science and innovation for scientists, researchers, and space enthusiasts. Access NASA data, shape 2023 as the year of open science, and pioneer the future of discovery.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+
+
+## Technology Used
+
+- React JS
+- Tailwind CSS
+- Swiper JS
+- Headless UI
+
+
+
+
+## 🔗 Live Site URL
+https://astralcollab.vercel.app
+
+
