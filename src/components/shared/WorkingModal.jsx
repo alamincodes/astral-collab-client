@@ -53,7 +53,7 @@ const WorkingModal = ({isOpen,setIsOpen}) => {
                     <div className="flex justify-center mt-4">
                       <button
                         type="button"
-                        className="inline-flex justify-center rounded-md border border-transparent bg-secondary px-8 font-bold py-2 text-sm  text-primary "
+                        className="inline-flex justify-center rounded-md border border-transparent bg-secondary px-8 font-bold py-2 text-sm  text-primary outline-none"
                         onClick={()=>setIsOpen(false)}
                       >
                         Close
